@@ -10,3 +10,5 @@ const Gallery = () => {
 };
 
 export default Gallery;
+
+// hi this is a comment
