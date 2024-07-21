@@ -6,7 +6,7 @@ const Contact = () => {
     <div className="contact-form-container">
       <div className="contact-form-content">
         <div className="image-container">
-          <img src="https://wowtheme7.com/tf/escola/assets/img/about/2.png" alt="Illustration" />
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5I5Hy8J6qoCukImq2YuuPHqtpuoC-MGp87chvNa3Tq1FiPzbgXkKktiNEttHr9uGVCxQ&usqp=CAU" alt="Illustration" />
         </div>
         
         <div className="form-container">
@@ -20,7 +20,7 @@ const Contact = () => {
             </div>
             <div className="input-group">
               <input type="text" placeholder="Your Phone" />
-              <input type="text" placeholder="Your Subject" />
+              <input type="text" placeholder="Your Event" />
             </div>
             <textarea placeholder="Message"></textarea>
             <button type="submit">Submit now</button>
