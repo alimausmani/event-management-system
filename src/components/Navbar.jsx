@@ -1,14 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Navbar.css';
 
-
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-brand">
         <a href="/">Alpha Events</a>
+        <button className="menu-toggle" onClick={toggleMenu}>
+          ☰
+        </button>
       </div>
-      <div className="navbar-menu">
+      <div className={`navbar-menu ${menuOpen ? 'open' : ''}`}>
         <a href="/home">Home</a>
         <a href="/about">About</a>
         <a href="/events">Events</a>

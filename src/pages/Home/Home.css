@@ -2,7 +2,7 @@
   position: relative;
   text-align: center;
   color: black;
-  height: 100vh;
+  height: 600px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -66,7 +66,7 @@
 }
 
 .about-button {
-  background-color: #ff4500; /* Red color */
+  background-color: #e91ea5; /* Red color */
   color: white;
 }
 
@@ -82,13 +82,11 @@
   background-size: cover;
   background-position: center;
   width: 100%;
-  height: 70%;
+  height: 600px;
   position: absolute;
   top: 0;
   left: 0;
 } 
-
-
 
 .overlay {
   position: absolute;
@@ -132,14 +130,13 @@
 }
 
 .about-button {
-  background-color: #ff4500; /* Red color */
+  background-color:  #ce4d63; /* Red color */
   color: white;
 }
 
 .get-started-button {
-  background-color: transparent;
-  color: #0f0c0c;
-  border: 2px solid white;
+  background-color: #e85d5d;
+  color: white;
 }
 
 
@@ -148,35 +145,39 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  background-color: #f8f8f8;
-  border: 3px solid;
-  margin-bottom: 25%; /* Adjust if needed */
+  padding: 50px;
+  /* background-color: #f8f8f8; */
+  background-color: hwb(318 89% 6%);
+  /* border: 3px solid; */
+  /* margin-top: -12%;  */
+  box-shadow: 10px 10px 15px #be1b1b4d; /* Add box-shadow here */
 }
+
 
 .second-content {
   max-width: 50%;
 }
 
-.title-intro {
-  color: #e91e63;
-  font-size: 1.2em;
-  margin-bottom: 10px;
-}
 
 h1 {
   font-size: 2em;
   margin-bottom: 20px;
+
+}
+
+h2{
+  color: #e129bc;
+  font-size: 2em;
 }
 
 p {
-  font-size: 1em;
+  font-size: 1.2em;
   line-height: 1.5;
   margin-bottom: 20px;
 }
 
-.call-to-action {
-  background-color: #e91e63;
+.contact-us {
+  background-color: #e91ea5;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -185,6 +186,174 @@ p {
 }
 
 .about-us-image img {
-  max-width: 100%;
-  height: auto;
+  width: 500px; /* Set a fixed width */
+  height: 500px; /* Set a fixed height */
+  object-fit: cover; /* Ensures the image covers the container proportionally */
+}
+
+
+/* Existing CSS */
+
+/* ...Your existing CSS code here... */
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+  .home-container {
+    padding: 10px;
+  }
+
+  .main-title {
+    font-size: 3em;
+  }
+
+  .sub-title {
+    font-size: 2em;
+  }
+
+  .about-us-image img {
+    width: 80%;
+    height: auto; /* Maintain aspect ratio */
+  }
+}
+
+@media (max-width: 992px) {
+  .main-title {
+    font-size: 2.5em;
+  }
+
+  .sub-title {
+    font-size: 1.8em;
+  }
+
+  .about-us-image img {
+    width: 70%;
+    height: auto; /* Maintain aspect ratio */
+  }
+}
+
+@media (max-width: 768px) {
+  .home-container {
+    padding: 5px;
+  }
+
+  .main-title {
+    font-size: 2em;
+  }
+
+  .sub-title {
+    font-size: 1.5em;
+  }
+
+  .about-us-image img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .second-container {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px; /* Adjust if needed */
+  }
+
+  .second-content {
+    max-width: 90%;
+  }
+
+  .button-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-button, .get-started-button {
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-title {
+    font-size: 1.8em;
+  }
+
+  .sub-title {
+    font-size: 1.2em;
+  }
+
+  .tagline {
+    font-size: 1em;
+  }
+
+  .button-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-button, .get-started-button {
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  .second-container {
+    padding: 10px;
+  }
+
+  .second-content {
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+
+  p {
+    font-size: 1em;
+  }
+
+  .contact-us {
+    font-size: 0.9em;
+  }
+
+  .about-us-image img {
+    width: 100%;
+    height: auto; 
+  }
+}
+
+/* features container */
+
+.featured-container {
+  background-color: 	hwb(353 33% 20%); /* Teal background color */
+  color: black;
+  text-align: center;
+  padding: 50px 20px;
+  margin: 20px 0; /* Adjust margin as needed */
+}
+
+.featured-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.featured-content h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.featured-content p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.buy-now-button {
+  background-color: transparent;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1em;
+  border-radius: 5px;
 }

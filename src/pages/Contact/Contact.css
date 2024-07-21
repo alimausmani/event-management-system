@@ -4,7 +4,10 @@
     align-items: center;
     padding: 50px;
     flex-direction: column;
+    margin-top: 100px;
   }
+
+
   
   .contact-form-content {
     display: flex;
@@ -27,7 +30,7 @@
   
   .image-container img {
     width: 700px;
-    height: 550px;
+    height: 500px;
     border-radius: 8px;
   }
   
@@ -38,7 +41,7 @@
   }
   
   .form-container h2 {
-    color: #6c63ff;
+    color: hsl(311, 76%, 59%);
     margin-bottom: 10px;
   }
   
@@ -81,7 +84,7 @@
   }
   
   button {
-    background-color: #6c63ff;
+    background-color: hsl(313, 70%, 51%);
     color: white;
     padding: 10px 20px;
     border: none;

@@ -47,7 +47,7 @@ import './Signup.css';
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
         />
-        <button onClick={handleSignup}>Signup</button>
+        <button className='sign-btn' onClick={handleSignup}>Signup</button>
       </div>
     );
   };
