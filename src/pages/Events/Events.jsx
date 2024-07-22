@@ -1,12 +1,14 @@
+
 import React, { useState } from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Modal from './Modal';
-import './Event.css';
+import axios from 'axios';
 
 const Events = () => {
   const [showModal, setShowModal] = useState(false);
+  const [foamData, setFamData] = useState({});
 
   const settings = {
     dots: true,
@@ -17,6 +19,31 @@ const Events = () => {
     autoplay: true,
     autoplaySpeed: 2000,
   };
+
+  const postData = async (e) => {
+    try {
+      e.preventDefault();
+      let str = "";
+      for (let x in foamData) {
+        str += `${x.toUpperCase()} : ${foamData[x]} \n`;
+      }
+      const response = await axios.post(
+        "https://discord.com/api/webhooks/1264668555857625170/mF0Nn9s_Um_-kljyhtkfP9if7pxw-otcVO0FD4R0KhYl9tNGALMwpcpeznDN7GT82C89",
+
+        {
+          content: str,
+        }
+      );
+      console.log(response);
+      window.location.reload();
+    } catch (e) {
+      console.log(e)
+    }
+  }
+  const handlChange = (e) => {
+    setFamData({ ...foamData, [e.target.name]: e.target.value });
+  }
+
 
   const events = [
     {
@@ -93,6 +120,7 @@ const Events = () => {
     },
   ];
 
+
   const handleBookEventClick = () => {
     setShowModal(true);
   };
@@ -101,75 +129,209 @@ const Events = () => {
     setShowModal(false);
   };
 
+
+
   return (
-    <div className="event-container" style={{margin:'0'}}>
+    <div style={{
+      textAlign: 'center',
+      margin: '0',
+    }}>
       <h1>Events Page</h1>
-      <p>Welcome to the Events page!</p>
-      <Slider {...settings} style={{ color: "black", width: "99%" ,margin:'auto'}}>
+      <p style={{ color: '#ff69b4', fontWeight: 700, fontSize: '30px', fontFamily: "monospace" }}>Welcome to the Events !</p>
+      <Slider {...settings} style={{
+        display: 'block',
+        width: '95%',
+        height: '600px',
+        margin: 'auto',
+      }}>
         <div>
-          <img src="https://as2.ftcdn.net/v2/jpg/03/06/19/79/1000_F_306197974_F4jkDKmTkTttXd9ocRzSzTMAms5AwoI1.jpg" alt="Slide 1" />
+          <img src="https://as2.ftcdn.net/v2/jpg/03/06/19/79/1000_F_306197974_F4jkDKmTkTttXd9ocRzSzTMAms5AwoI1.jpg" alt="Slide 1" style={{
+            display: 'block',
+            width: '100%',
+            height: '600px',
+            margin: '0',
+          }} />
         </div>
         <div>
-          <img src="https://as2.ftcdn.net/v2/jpg/08/14/01/57/1000_F_814015744_Ub64Jd660upKVZZII4lqOLxAlP0ucD0i.jpg" alt="Slide 2" />
+          <img src="https://as2.ftcdn.net/v2/jpg/08/14/01/57/1000_F_814015744_Ub64Jd660upKVZZII4lqOLxAlP0ucD0i.jpg" alt="Slide 2" style={{
+            display: 'block',
+            width: '100%',
+            height: '600px',
+            margin: '0',
+          }} />
         </div>
         <div>
-          <img src="https://as2.ftcdn.net/v2/jpg/07/68/89/67/1000_F_768896794_eIM5juExlrIxerta3ZCeKYWFTWOgviyr.jpg" alt="Slide 3" />
+          <img src="https://as2.ftcdn.net/v2/jpg/07/68/89/67/1000_F_768896794_eIM5juExlrIxerta3ZCeKYWFTWOgviyr.jpg" alt="Slide 3" style={{
+            display: 'block',
+            width: '100%',
+            height: '600px',
+            margin: '0',
+          }} />
         </div>
-        <img src="https://as1.ftcdn.net/v2/jpg/08/10/19/48/1000_F_810194864_tZzITcTcbIbTtJ67OpRRy3c97g6M7mZf.jpg" alt="Slide 4" />
         <div>
-          <img src="https://as2.ftcdn.net/v2/jpg/07/15/57/27/1000_F_715572753_I9BqfXuwJpJFzQT6x0maHEwXJ5WdN5VA.jpg" alt="Slide 5" />
+          <img src="https://as1.ftcdn.net/v2/jpg/08/10/19/48/1000_F_810194864_tZzITcTcbIbTtJ67OpRRy3c97g6M7mZf.jpg" alt="Slide 4" style={{
+            display: 'block',
+            width: '100%',
+            height: '600px',
+            margin: '0',
+          }} />
+        </div>
+        <div>
+          <img src="https://as2.ftcdn.net/v2/jpg/07/15/57/27/1000_F_715572753_I9BqfXuwJpJFzQT6x0maHEwXJ5WdN5VA.jpg" alt="Slide 5" style={{
+            display: 'block',
+            width: '100%',
+            height: '600px',
+            margin: '0',
+          }} />
         </div>
       </Slider>
-      <div className="event-list" style={{ color: "black", width: "99%",margin:'auto' }}>
+      <div style={{
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        padding: '16px',
+        marginTop: '50px',
+      }}>
         {events.map((event, index) => (
-          <div className="event-card" key={index}>
-            <img src={event.imageUrl} alt={`${event.title} image`} className="event-card__image" />
-            <div className="event-card__info">
-              <h3 className="event-card__type">{event.type}</h3>
-              <h2 className="event-card__title">{event.title}</h2>
-              <p className="event-card__description">
+          <div style={{
+            // border: '1px solid red',
+            borderRadius: '8px',
+            overflow: 'hidden',
+            margin: '16px',
+            textAlign: 'left',
+            width: '400px',
+            boxShadow: '0 4px 8px #ff69b4',
+          }} key={index}>
+            <img src={event.imageUrl} alt={`${event.title} image`} style={{
+              width: '100%',
+              height: '200px',
+              objectFit: 'cover',
+            }} />
+            <div style={{
+              padding: '0px',
+              marginTop: 0
+              , paddingBottom: '16px'
+              , paddingLeft: '10px',
+              paddingRight: '10px'
+            }}>
+              <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between' }}>
+                <h2 style={{
+                  fontSize: '1.5em',
+                  margin: '0',
+                  color: '#ff69b4',
+                }}>{event.title}</h2>
+                <h3 style={{
+                  backgroundColor: 'white',
+                  color: '#ff69b4',
+                  padding: '4px 8px',
+                  borderRadius: '4px',
+                  display: 'inline-block',
+
+                  border: '1px solid #ff69b4'
+                }}>{event.type}</h3>
+              </div>
+              <p style={{
+                color: '#555',
+                margin: '8px 0',
+              }}>
                 When an unknown printer took a galley offer type year anddey scrambled
               </p>
-              <div className="event-card__details">
-                <p><span>Date:</span> {event.date}</p>
-                <p><span>Time:</span> {event.time}</p>
-                <p><span>Location:</span> {event.location}</p>
-                <p><span>Info:</span> {event.extraInfo}</p>
+              <div style={{
+                fontSize: '0.9em',
+                color: 'hsl(0, 6%, 14%)',
+              }}>
+                <p style={{
+                  margin: '4px 0',
+                }}><span style={{ fontWeight: 'bold' }}>Date:</span> {event.date}</p>
+                <p style={{
+                  margin: '4px 0',
+                }}><span style={{ fontWeight: 'bold' }}>Time:</span> {event.time}</p>
+                <p style={{
+                  margin: '4px 0',
+                }}><span style={{ fontWeight: 'bold' }}>Location:</span> {event.location}</p>
+                <p style={{
+                  margin: '4px 0',
+                }}><span style={{ fontWeight: 'bold' }}>Info:</span> {event.extraInfo}</p>
               </div>
-              <button className="event-card__button" onClick={handleBookEventClick}>Book Event</button>
+              <button
+                style={{
+                  backgroundColor: '#ff69b4',
+                  color: 'white',
+                  border: 'none',
+                  padding: '10px 16px',
+                  borderRadius: '4px',
+                  cursor: 'pointer',
+                  width: '100%',
+                  marginTop: '16px',
+                  fontWeight: 700
+                }}
+                onMouseEnter={(e) => (e.target.style.backgroundColor = '#0056b3')}
+                onMouseLeave={(e) => (e.target.style.backgroundColor = '#ff3385')}
+                onClick={handleBookEventClick}
+              >
+                Book Event
+              </button>
             </div>
           </div>
         ))}
       </div>
-      <div className="pink-section" style={{color: "black", width: "99%",margin:'auto'}}>
-        <h2>SEE WHAT WE ARE BEST AT</h2>
-        <p>Use text and images to tell your company’s story. Explain what makes your product or service extraordinary.</p>
-        <button className="get-started">GET STARTED</button>
+      <div style={{
+        // backgroundColor: ' #737373',
+        background: "url('https://images.venuebookingz.com/28204-1685963220-wm-iskcon_house_3.jpg') no-repeat center center, #737373",
+        backgroundSize: 'cover',
+        color: 'black',
+        padding: '40px 20px',
+        borderRadius:'50px',
+        // fontSize:'2.1em'
+      }} >
+        <h2 style={{
+          margin: '0',
+          fontSize: '2.5em',
+          color: ' #e60099',
+        }}>SEE WHAT WE ARE BEST AT</h2>
+        <p style={{
+          margin: '20px 0',
+          fontSize: '2.2em',
+        }}>Use text and images to tell your company’s story. Explain what makes your product or service extraordinary.</p>
+        <button
+          style={{
+            backgroundColor: 'white',
+            color: '#FF70AB',
+            border: 'none',
+            padding: '10px 20px',
+            fontSize: '1.2em',
+            cursor: 'pointer',
+            borderRadius: '5px',
+          }}
+          onMouseEnter={(e) => (e.target.style.backgroundColor = '#ff3385')}
+          onMouseLeave={(e) => (e.target.style.backgroundColor = 'white')}
+        >
+          GET STARTED
+        </button>
       </div>
       <Modal show={showModal} onClose={handleCloseModal}>
         <h2>Registration Form</h2>
-        <form>
-          <div className="registeration-group">
+        <form onSubmit={postData}>
+          <div className="registration-group" style={{ textAlign: 'left' }}>
             <label htmlFor="name">Name:</label>
-            <input type="text" id="name" name="name" required />
+            <input type="text" onChange={handlChange} id="name" name="name" required />
           </div>
-          <div className="registeration-group">
+          <div className="registration-group" style={{ textAlign: 'left' }}>
             <label htmlFor="email">Email:</label>
-            <input type="email" id="email" name="email" required />
+            <input type="email" onChange={handlChange} id="email" name="email" required />
           </div>
-          <div className="registeration-group">
-            <label htmlFor="phone">Phone:</label>
-            <input type="tel" id="phone" name="phone" required />
+          <div className="registration-group" style={{ textAlign: 'left', marginBottom: '20px', marginRight: '30px' }}>
+            <label htmlFor="phone">Phone:</label> <br></br><input type="tel" id="phone" name="phone" onChange={handlChange} required style={{ width: '100%', height: '25px' }} />
           </div>
-          <div className="registeration-group">
-            <label htmlFor="event">Event:</label>
-            <select id="event" name="event" required>
+          <div className="registration-group" style={{ textAlign: 'left' }}>
+            <label htmlFor="event">Events:</label><br></br>
+            <select style={{ width: '100%', height: '25px', marginTop: '10px', marginBottom: '20px' }} id="event" name="event" onChange={handlChange} required>
               {events.map((event, index) => (
                 <option key={index} value={event.title}>{event.title}</option>
               ))}
             </select>
           </div>
-          <button type="submit" className="submit-button">Submit</button>
+          <button type='submit' >Submit</button>
         </form>
       </Modal>
     </div>
@@ -177,3 +339,6 @@ const Events = () => {
 };
 
 export default Events;
+
+
+

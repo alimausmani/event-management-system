@@ -23,6 +23,7 @@ const Navbar = () => {
         <a href="/gallery">Gallery</a>
         <a href="/contact">Contact</a>
         <a href="/signup">Signup</a>
+        <a href="/login">Login</a>
       </div>
     </nav>
   );

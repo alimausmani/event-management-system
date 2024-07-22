@@ -7,6 +7,7 @@ import Events from './pages/Events/Events';
 import Gallery from './pages/Gallery/Gallery';
 import Contact from './pages/Contact/Contact';
 import Signup from './pages/Signup/Signup';
+import Login from './pages/Login/Login';
 import './index.css';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login/>}/>
         <Route path="/" element={<Home />} /> {/* Default route */}
       </Routes>
     </Router>

@@ -1,4 +1,4 @@
-.footer {
+ .footer {
     background-color: black;
     padding: 40px 0;
     text-align: center;
@@ -27,22 +27,18 @@
   
   .footer-links a,
   .footer-menu a {
-    /* color: #6c757d; */
     color: aliceblue;
     text-decoration: none;
   }
-
-  .footer-social{
-    width: 50px;
-    height: 60px;
-    background-color: aliceblue;
+  
+  .footer-social {
+    display: flex;
+    gap: 15px;
   }
   
-  .footer-social a {
-    color: #6c757d;
-    font-size: 20px;
-    margin: 0 10px;
-    text-decoration: none;
+  .footer-social a img {
+    width: 30px; /* Adjust the size of the icons as needed */
+    height: 30px;
   }
   
   .footer-bottom {

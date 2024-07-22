@@ -1,3 +1,5 @@
+
+
 import React from 'react';
 import './Footer.css';
 
@@ -15,11 +17,21 @@ const Footer = () => {
           </ul>
         </div>
         <div className="footer-social">
-          <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtfbcYeYgf0wQJ-LSPm3CPbyB7T1p0f5bnaA&s"><i className="fab fa-facebook-f"></i></a>
-          <a href="#"><i className="fab fa-twitter"></i></a>
-          <a href="#"><i className="fab fa-dribbble"></i></a>
-          <a href="#"><i className="fab fa-behance"></i></a>
-          <a href="#"><i className="fab fa-linkedin-in"></i></a>
+          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+            <img src="/facebook.png" alt="Facebook" />
+          </a>
+          <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+            <img src="/twitter.png" alt="Twitter" />
+          </a>
+          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+            <img src="/instagram.png" alt="Instagram" />
+          </a>
+          <a href="https://www.github.com" target="_blank" rel="noopener noreferrer">
+            <img src="/github.png" alt="GitHub" />
+          </a>
+          <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+            <img src="/linkedin.png" alt="LinkedIn" />
+          </a>
         </div>
         <div className="footer-menu">
           <ul>

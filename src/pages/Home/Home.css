@@ -135,7 +135,7 @@
 }
 
 .get-started-button {
-  background-color: #e85d5d;
+  background-color: #ce4d63;;
   color: white;
 }
 
@@ -323,13 +323,25 @@ p {
 }
 
 /* features container */
+/* 
+.featured-container {
+  background-color: 	hwb(353 33% 20%); 
+  color: black;
+  text-align: center;
+  padding: 50px 20px;
+  margin: 20px 0; 
+  border-radius: 50px;
+} */
+
 
 .featured-container {
-  background-color: 	hwb(353 33% 20%); /* Teal background color */
+  background: url('https://imagewedz.oyoroomscdn.com/medium/photologue/images/hotel-kiscol-grands-tatabad-coimbatore.jpg') no-repeat center center, hwb(353 33% 20%); /* Background image and teal background color */
+  background-size: cover; /* Ensure the background image covers the container */
   color: black;
   text-align: center;
   padding: 50px 20px;
   margin: 20px 0; /* Adjust margin as needed */
+  border-radius: 50px;
 }
 
 .featured-content {
@@ -340,12 +352,13 @@ p {
 .featured-content h2 {
   font-size: 2.5em;
   margin-bottom: 20px;
-  color: white;
+  color: #d62595;
 }
 
 .featured-content p {
-  font-size: 1.2em;
+  font-size: 2.2em;
   margin-bottom: 30px;
+  color: black;
 }
 
 .buy-now-button {
