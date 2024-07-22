@@ -85,12 +85,34 @@ const About = () => {
         </div>
       </div>
       <div className="event-managers">
-        <div className="manager" id="manager1"></div>
-        <div className="manager" id="manager2"></div>
+      <h1>Meet Our Team</h1>
+      <div className="managers">
+        <div className="manager" id="manager1">
+        <img src='Aarti.jpeg' alt="manager1" className="manager1" />
+        <p>Name:-Aarti Biradar<br></br>Contact:-8660604678<br></br>Email-id:-aartibiradar21@navgurukul.org</p>
+        </div>
+        <div className="manager" id="manager2">
+        <img src='aalu.jpeg' alt="manager2" className="manager2" />
+        <p>Name:-Alima Usmani<br></br>Contact:-7388498327<br></br>Email-id:-alimausmani21@navgurukul.org</p>
+  
+        </div>
       </div>
-
+      </div>
     </>
   );
 };
 
 export default About;
+{/* <div className="event-managers">
+    <h1>Meet Our Team</h1>
+    <div className="managers">
+        <div className="manager" id="manager1">
+            <img src='Aarti.jpeg' alt="manager1" className="manager1" />
+            <p>Name:-Aarti Biradar<br>Contact:-8660604678<br>Email-id:-aartibiradar21@navgurukul.org</p>
+        </div>
+        <div className="manager" id="manager2">
+            <img src='aalu.jpeg' alt="manager2" className="manager2" />
+            <p>Name:-Alima Usmani<br>Contact:-7388498327<br>Email-id:-alimausmani21@navgurukul.org</p>
+        </div>
+    </div>
+</div> */}
