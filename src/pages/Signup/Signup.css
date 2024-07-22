@@ -1,13 +1,23 @@
+.background-image {
+    background-image: url('https://as1.ftcdn.net/v2/jpg/07/73/38/88/1000_F_773388884_oQuqhHdBtRfsBfBsRGGwB4QWpD7uWwSS.jpg'); 
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 70%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  } 
 
-
-   .signup-container {
+.signup-container {
     width: 300px;
     margin: 0 auto;
     padding: 40px;
     border: 1px solid #ccc;
-    border-radius: 10px;
-    background-color: #f9f9f9;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    margin-top: 200px;
+    
+   
   }
   
   h2 {
@@ -49,3 +59,24 @@
     margin-bottom: 10px;
   }
   
+  @media (max-width: 480px) {
+    .signup-container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    input[type='text'],
+    input[type='email'],
+    input[type='password'] {
+        padding: 6px;
+    }
+
+    button {
+        padding: 6px;
+        font-size: 12px;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+}
