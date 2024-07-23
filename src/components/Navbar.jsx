@@ -17,7 +17,7 @@ const Navbar = () => {
         </button>
       </div>
       <div className={`navbar-menu ${menuOpen ? 'open' : ''}`}>
-        <a href="/">Home</a>
+        <a href="/home">Home</a>
         <a href="/about">About</a>
         <a href="/events">Events</a>
         <a href="/gallery">Gallery</a>
