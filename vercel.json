@@ -1,0 +1,32 @@
+{
+    "rewrites": [
+        {
+            "source": "/login",
+            "destination": "/login"
+          },
+        {
+            "source": "/signup",
+            "destination": "/signup"
+          },
+        {
+            "source": "/contact",
+            "destination": "/contact"
+          },
+        {
+            "source": "/gallery",
+            "destination": "/gallery"
+          },
+      {
+        "source": "/events",
+        "destination": "/events"
+      },
+      {
+        "source": "/about",
+        "destination": "/about"
+      },
+      {
+        "source": "/home(.*)",
+        "destination": "/home"
+      }
+    ]
+  }

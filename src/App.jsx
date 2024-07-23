@@ -22,7 +22,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login/>}/>
-        <Route path="/" element={<Home />} /> {/* Default route */}
+        {/* <Route path="/" element={<Home />} /> Default route */}
       </Routes>
     </Router>
   );
